@@ -1,0 +1,35 @@
+{
+  "name": "@deflock/postcss-image-size",
+  "version": "0.1.0",
+  "license": "MIT",
+  "homepage": "https://github.com/deflock/postcss-image-size",
+  "repository": "deflock/postcss-image-size",
+  "main": "lib/index.js",
+  "module": "src/index.mjs",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=8.0"
+  },
+  "scripts": {
+    "clean": "rimraf lib",
+    "compile": "babel src --out-dir lib",
+    "recompile": "yarn clean && yarn compile",
+    "pretest": "yarn recompile",
+    "test": "jest",
+    "prepublishOnly": "yarn test"
+  },
+  "dependencies": {
+    "image-size": "^0.7.1",
+    "postcss": "^7.0.11"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "cross-env": "^5.2.0",
+    "jest": "^23.6.0",
+    "rimraf": "^2.6.3"
+  }
+}
